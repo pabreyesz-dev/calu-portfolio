@@ -1,0 +1,98 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+---
+
+<MainLayout title="Galería | CALÚ">
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center text-center px-6 pt-10 bg-linear-to-br from-black via-pink-950/20 to-black">
+    <div class="max-w-4xl z-10">
+      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6">
+        Galería
+      </h1>
+      <p class="text-xl text-gray-300">
+        Momentos capturados en vivo
+      </p>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section class="py-20 md:py-32 bg-linear-to-b from-black to-pink-950/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <SectionTitle 
+        title="Galería de Momentos"
+        subtitle="Fotos y videos de mis presentaciones"
+      />
+
+      <!-- Filtros -->
+      <div class="flex gap-4 justify-center mb-12 flex-wrap">
+        <button class="px-6 py-2 rounded-full bg-pink-500 hover:bg-pink-600 transition font-semibold">Todos</button>
+        <button class="px-6 py-2 rounded-full border border-pink-500 hover:bg-pink-500/10 transition font-semibold">Conciertos</button>
+        <button class="px-6 py-2 rounded-full border border-pink-500 hover:bg-pink-500/10 transition font-semibold">Estudio</button>
+        <button class="px-6 py-2 rounded-full border border-pink-500 hover:bg-pink-500/10 transition font-semibold">Eventos</button>
+      </div>
+
+      <!-- Grid de imágenes -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="aspect-square bg-linear-to-br from-pink-600 to-pink-900 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
+          <div class="w-full h-full flex items-center justify-center text-center p-6">
+            <div>
+              <p class="text-white text-lg font-semibold">Concierto en Vivo</p>
+              <p class="text-pink-100 text-sm mt-2">Diciembre 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="aspect-square bg-linear-to-br from-pink-700 to-pink-950 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
+          <div class="w-full h-full flex items-center justify-center text-center p-6">
+            <div>
+              <p class="text-white text-lg font-semibold">Sesión de Estudio</p>
+              <p class="text-pink-100 text-sm mt-2">Noviembre 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="aspect-square bg-linear-to-br from-pink-600 to-rose-900 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
+          <div class="w-full h-full flex items-center justify-center text-center p-6">
+            <div>
+              <p class="text-white text-lg font-semibold">Presentación Festival</p>
+              <p class="text-pink-100 text-sm mt-2">Octubre 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="aspect-square bg-linear-to-br from-pink-700 to-pink-950 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
+          <div class="w-full h-full flex items-center justify-center text-center p-6">
+            <div>
+              <p class="text-white text-lg font-semibold">Ensayo General</p>
+              <p class="text-pink-100 text-sm mt-2">Septiembre 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="aspect-square bg-linear-to-br from-pink-600 to-pink-900 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
+          <div class="w-full h-full flex items-center justify-center text-center p-6">
+            <div>
+              <p class="text-white text-lg font-semibold">Colaboración Artística</p>
+              <p class="text-pink-100 text-sm mt-2">Agosto 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="aspect-square bg-linear-to-br from-pink-700 to-pink-950 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
+          <div class="w-full h-full flex items-center justify-center text-center p-6">
+            <div>
+              <p class="text-white text-lg font-semibold">Backstage Momento</p>
+              <p class="text-pink-100 text-sm mt-2">Julio 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nota -->
+      <div class="mt-16 text-center p-8 border border-pink-500/30 rounded-lg bg-neutral-900/50">
+        <p class="text-gray-400">Las imágenes de alta calidad estarán disponibles próximamente. Sigue mis redes sociales para más contenido visual.</p>
+      </div>
+    </div>
+  </section>
+</MainLayout>

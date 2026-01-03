@@ -1,0 +1,98 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+---
+
+<MainLayout title="Prensa | CALÚ">
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center text-center px-6 pt-10 bg-linear-to-br from-black via-pink-950/20 to-black">
+    <div class="max-w-4xl z-10">
+      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6">
+        Prensa
+      </h1>
+      <p class="text-xl text-gray-300">
+        Cobertura mediática y menciones
+      </p>
+    </div>
+  </section>
+
+  <!-- Prensa -->
+  <section class="py-20 md:py-32 bg-linear-to-br from-black to-pink-950/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <SectionTitle 
+        title="Cobertura Mediática"
+        subtitle="Lo que dicen de mí en los medios"
+      />
+
+      <!-- Artículos destacados -->
+      <div class="space-y-8">
+        <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-8 hover:border-pink-500 hover:bg-white/10 transition duration-300">
+            <div class="flex-1">
+              <h3 class="text-xl font-bold mb-2">"CALÚ: La Voz que Revoluciona la Música Contemporánea"</h3>
+              <p class="text-gray-400 mb-4">Un profundo análisis sobre el talento artístico y la innovación musical de CALÚ en la escena nacional.</p>
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <p class="text-sm text-gray-500">Revista Música Viva • Diciembre 2025</p>
+                <a href="#" class="text-pink-400 hover:text-pink-300 font-semibold">Leer artículo →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-8 hover:border-pink-500 hover:bg-white/10 transition duration-300">
+          <div class="flex items-start gap-6">
+            <div class="w-20 h-20 bg-linear-to-br from-pink-700 to-pink-950 rounded-lg flex items-center justify-center shrink-0">
+              <span class="text-white font-bold text-center text-sm">Diario Cultural</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold mb-2">Reseña: El Nuevo Álbum de CALÚ Cautiva a la Crítica</h3>
+              <p class="text-gray-400 mb-4">La crítica especializada elogia la madurez artística y la originalidad del más reciente trabajo discográfico.</p>
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <p class="text-sm text-gray-500">Diario Cultural • Noviembre 2025</p>
+                <a href="#" class="text-pink-400 hover:text-pink-300 font-semibold">Leer artículo →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-8 hover:border-pink-500 hover:bg-white/10 transition duration-300">
+          <div class="flex items-start gap-6">
+            <div class="w-20 h-20 bg-linear-to-br from-pink-600 to-rose-900 rounded-lg flex items-center justify-center shrink-0">
+              <span class="text-white font-bold text-center text-sm">Portal Web</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold mb-2">Entrevista Exclusiva: "La Música es Mi Forma de Comunicar"</h3>
+              <p class="text-gray-400 mb-4">Una conversación profunda donde CALÚ comparte sus inspiraciones, procesos creativos y proyectos futuros.</p>
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <p class="text-sm text-gray-500">Sitio Web de Música • Octubre 2025</p>
+                <a href="#" class="text-pink-400 hover:text-pink-300 font-semibold">Ver entrevista →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-8 hover:border-pink-500 hover:bg-white/10 transition duration-300">
+          <div class="flex items-start gap-6">
+            <div class="w-20 h-20 bg-linear-to-br from-pink-700 to-pink-950 rounded-lg flex items-center justify-center shrink-0">
+              <span class="text-white font-bold text-center text-sm">Podcast</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold mb-2">"Historias de Artistas: La Trayectoria de CALÚ"</h3>
+              <p class="text-gray-400 mb-4">Un episodio especial del popular podcast donde se narra la historia de vida y carrera musical de CALÚ.</p>
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <p class="text-sm text-gray-500">Podcast Artístico • Septiembre 2025</p>
+                <a href="#" class="text-pink-400 hover:text-pink-300 font-semibold">Escuchar →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacto Prensa -->
+      <div class="mt-16 p-8 bg-linear-to-r from-pink-900/30 to-pink-950/30 rounded-lg border border-pink-500/30">
+        <h2 class="text-2xl font-bold font-['Playfair_Display'] mb-4">¿Eres Periodista?</h2>
+        <p class="text-gray-400 mb-6">Si deseas solicitar una entrevista, cobertura o información de prensa, contáctame a través del formulario de contacto.</p>
+        <a href="/contacto" class="inline-block bg-pink-500 hover:bg-pink-600 px-8 py-3 rounded-lg font-semibold transition">Contacto Prensa</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

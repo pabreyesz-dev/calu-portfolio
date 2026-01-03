@@ -1,0 +1,139 @@
+---
+// ThemeToggle.astro - Selector de tema e idioma
+---
+
+<div class="fixed top-24 right-6 z-40 flex gap-3">
+  <!-- Selector de Tema -->
+  <div class="flex gap-2">
+    <button 
+      id="theme-golden" 
+      class="w-10 h-10 rounded-full bg-yellow-600 hover:bg-yellow-500 transition border-2 border-transparent hover:border-white shadow-lg" 
+      title="Dorado"
+      aria-label="Golden theme"
+    ></button>
+    <button 
+      id="theme-gray" 
+      class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gray-500 transition border-2 border-transparent hover:border-white shadow-lg" 
+      title="Gris"
+      aria-label="Gray theme"
+    ></button>
+    <button 
+      id="theme-pink" 
+      class="w-10 h-10 rounded-full bg-pink-600 hover:bg-pink-500 transition border-2 border-white shadow-lg" 
+      title="Rosa"
+      aria-label="Pink theme"
+    ></button>
+  </div>
+
+  <!-- Selector de Idioma -->
+  <div class="flex gap-2 ml-2">
+    <button 
+      id="lang-es" 
+      class="px-3 py-1 rounded-lg bg-white text-black font-bold text-sm hover:bg-gray-200 transition shadow-lg" 
+      title="Español"
+      aria-label="Spanish"
+    >ES</button>
+    <button 
+      id="lang-en" 
+      class="px-3 py-1 rounded-lg bg-gray-700 text-white font-bold text-sm hover:bg-gray-600 transition shadow-lg" 
+      title="English"
+      aria-label="English"
+    >EN</button>
+  </div>
+</div>
+
+<script>
+  // Temas disponibles
+  const themes = {
+    golden: {
+      primary: '#D97706', // amber-600
+      accent: '#FBBF24',  // amber-400
+      secondary: '#92400E', // amber-900
+    },
+    gray: {
+      primary: '#4B5563', // gray-600
+      accent: '#9CA3AF',  // gray-400
+      secondary: '#1F2937', // gray-800
+    },
+    pink: {
+      primary: '#EC4899', // pink-500
+      accent: '#F472B6',  // pink-400
+      secondary: '#831843', // pink-900
+    },
+  };
+
+  // Aplicar tema
+  function applyTheme(themeName: keyof typeof themes) {
+    const theme = themes[themeName];
+    const root = document.documentElement;
+    
+    root.style.setProperty('--primary-color', theme.primary);
+    root.style.setProperty('--accent-color', theme.accent);
+    root.style.setProperty('--secondary-color', theme.secondary);
+    
+    // Guardar preferencia
+    localStorage.setItem('theme', themeName);
+    updateThemeButtons(themeName);
+  }
+
+  // Actualizar estado de botones
+  function updateThemeButtons(active: string) {
+    document.querySelectorAll('[id^="theme-"]').forEach(btn => {
+      const theme = (btn as HTMLElement).id.replace('theme-', '');
+      if (theme === active) {
+        btn.classList.add('border-white');
+        btn.classList.remove('border-transparent');
+      } else {
+        btn.classList.remove('border-white');
+        btn.classList.add('border-transparent');
+      }
+    });
+  }
+
+  // Cambiar idioma
+  function changeLanguage(lang: string) {
+    localStorage.setItem('language', lang);
+    location.reload();
+  }
+
+  // Actualizar estado de botones de idioma
+  function updateLanguageButtons(active: string) {
+    document.querySelectorAll('[id^="lang-"]').forEach(btn => {
+      const language = (btn as HTMLElement).id.replace('lang-', '');
+      if (language === active) {
+        btn.classList.add('bg-white', 'text-black');
+        btn.classList.remove('bg-gray-700', 'text-white');
+      } else {
+        btn.classList.add('bg-gray-700', 'text-white');
+        btn.classList.remove('bg-white', 'text-black');
+      }
+    });
+  }
+
+  // Event listeners para temas
+  document.getElementById('theme-golden')?.addEventListener('click', () => applyTheme('golden'));
+  document.getElementById('theme-gray')?.addEventListener('click', () => applyTheme('gray'));
+  document.getElementById('theme-pink')?.addEventListener('click', () => applyTheme('pink'));
+
+  // Event listeners para idioma
+  document.getElementById('lang-es')?.addEventListener('click', () => changeLanguage('es'));
+  document.getElementById('lang-en')?.addEventListener('click', () => changeLanguage('en'));
+
+  // Inicializar al cargar
+  window.addEventListener('load', () => {
+    const savedTheme = (localStorage.getItem('theme') as keyof typeof themes) || 'pink';
+    const savedLanguage = localStorage.getItem('language') || 'es';
+    
+    applyTheme(savedTheme);
+    updateLanguageButtons(savedLanguage);
+  });
+</script>
+
+<style>
+  /* Variables CSS para los temas */
+  :root {
+    --primary-color: #EC4899;
+    --accent-color: #F472B6;
+    --secondary-color: #831843;
+  }
+</style>

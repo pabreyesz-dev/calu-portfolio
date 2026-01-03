@@ -1,0 +1,133 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+---
+
+<MainLayout title="Contacto | CALÚ">
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center text-center px-6 pt-10 bg-linear-to-br from-black via-pink-950/20 to-black">
+    <div class="max-w-4xl z-10">
+      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6">
+        Contacto
+      </h1>
+      <p class="text-xl text-gray-300">
+        ¿Quieres trabajar conmigo? Estoy aquí para escucharte
+      </p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="py-20 md:py-32 bg-linear-to-b from-black to-pink-950/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <SectionTitle 
+        title="Ponte en Contacto"
+        subtitle="Me encantaría saber de ti"
+      />
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Información de contacto -->
+        <div class="space-y-8">
+
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="text-2xl text-pink-400 shrink-0">📧</div>
+              <div>
+                <p class="font-semibold mb-1">Email</p>
+                <a href="mailto:contacto@calu.com" class="text-gray-400 hover:text-pink-400 transition">contacto@calu.com</a>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="text-2xl text-pink-400 shrink-0">📱</div>
+              <div>
+                <p class="font-semibold mb-1">WhatsApp</p>
+                <a href="https://wa.me/message" class="text-gray-400 hover:text-pink-400 transition">+56 9 XXXX XXXX</a>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="text-2xl text-pink-400 shrink-0">📍</div>
+              <div>
+                <p class="font-semibold mb-1">Ubicación</p>
+                <p class="text-gray-400">Santiago, Chile</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="text-2xl text-pink-400 shrink-0">🎵</div>
+              <div>
+                <p class="font-semibold mb-1">Redes Sociales</p>
+                <div class="flex gap-3 mt-2">
+                  <a href="#" class="text-gray-400 hover:text-pink-400 transition">Instagram</a>
+                  <span class="text-gray-600">•</span>
+                  <a href="#" class="text-gray-400 hover:text-pink-400 transition">YouTube</a>
+                  <span class="text-gray-600">•</span>
+                  <a href="#" class="text-gray-400 hover:text-pink-400 transition">Spotify</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 bg-white/5 backdrop-blur rounded-lg border border-pink-500/30">
+            <p class="text-sm text-gray-400">
+              <strong>Tiempo de respuesta:</strong> Respondo todos los mensajes en el menor tiempo posible, generalmente en 24-48 horas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div>
+          <h2 class="text-2xl font-bold font-['Playfair_Display'] mb-6">Envíame un Mensaje</h2>
+          <form class="space-y-6" method="POST">
+            <div>
+              <input
+                type="text"
+                placeholder="Tu nombre"
+                required
+                class="w-full p-4 bg-neutral-900 border border-pink-500/30 rounded-lg focus:outline-none focus:border-pink-500 transition placeholder-gray-600"
+              />
+            </div>
+
+            <div>
+              <input
+                type="email"
+                placeholder="Tu correo electrónico"
+                required
+                class="w-full p-4 bg-neutral-900 border border-pink-500/30 rounded-lg focus:outline-none focus:border-pink-500 transition placeholder-gray-600"
+              />
+            </div>
+
+            <div>
+              <input
+                type="text"
+                placeholder="Asunto"
+                required
+                class="w-full p-4 bg-neutral-900 border border-pink-500/30 rounded-lg focus:outline-none focus:border-pink-500 transition placeholder-gray-600"
+              />
+            </div>
+
+            <div>
+              <textarea
+                placeholder="Tu mensaje"
+                rows="5"
+                required
+                class="w-full p-4 bg-neutral-900 border border-pink-500/30 rounded-lg focus:outline-none focus:border-pink-500 transition placeholder-gray-600 resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-pink-500 hover:bg-pink-600 transition px-6 py-4 rounded-lg font-semibold uppercase tracking-wider"
+            >
+              Enviar Mensaje
+            </button>
+
+            <p class="text-sm text-gray-500 text-center">
+              Los campos marcados con * son obligatorios
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

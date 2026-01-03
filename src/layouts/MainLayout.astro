@@ -1,0 +1,50 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import "../styles/global.css";
+
+const { title = "CALÚ" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>{title}</title>
+
+    <!-- Meta SEO -->
+    <meta name="description" content="Sitio oficial de CALÚ - Cantante, compositora y artista" />
+    <meta name="keywords" content="CALÚ, cantante, música, artista, eventos" />
+    <meta name="author" content="CALÚ" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Sitio oficial de CALÚ - Cantante, compositora y artista" />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-black text-white font-['Inter'] antialiased">
+
+    <Navbar />
+    <ThemeToggle />
+
+    <!-- Contenido principal -->
+    <main class="pt-24">
+      <slot />
+    </main>
+
+    <Footer />
+
+  </body>
+</html>

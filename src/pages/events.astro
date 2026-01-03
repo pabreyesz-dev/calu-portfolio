@@ -1,0 +1,91 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+---
+
+<MainLayout title="Eventos | CALÚ">
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center text-center px-6 pt-10 bg-linear-to-br from-black via-pink-950/20 to-black">
+    <div class="max-w-4xl z-10">
+      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6">
+        Mis Eventos
+      </h1>
+      <p class="text-xl text-gray-300">
+        Únete a mí en vivo
+      </p>
+    </div>
+  </section>
+
+  <!-- Eventos -->
+  <section class="py-20 md:py-32 bg-linear-to-b from-black to-pink-950/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <SectionTitle 
+        title="Próximas Presentaciones"
+        subtitle="Acompáñame en estos eventos especiales"
+      />
+      
+      <div class="space-y-6">
+        <!-- Evento 1 -->
+        <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-8 hover:border-pink-500 hover:bg-white/10 transition duration-300">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="space-y-3 flex-1">
+              <p class="text-pink-400 font-semibold uppercase tracking-wider text-sm">Próximo evento</p>
+              <h3 class="text-2xl font-bold font-['Playfair_Display']">Concierto en Vivo - Teatro Municipal</h3>
+              <p class="text-gray-400">Santiago, Chile</p>
+              <div class="space-y-2 pt-4 text-lg">
+                <p>📅 <strong>15 de Enero, 2026</strong></p>
+                <p>🕖 <strong>20:00 hrs</strong></p>
+                <p>📍 <strong>Teatro Municipal - Av. Principal 123</strong></p>
+              </div>
+            </div>
+            <a href="#" class="bg-pink-500 hover:bg-pink-600 px-8 py-3 rounded-lg font-semibold transition whitespace-nowrap">Comprar entrada</a>
+          </div>
+        </div>
+
+        <!-- Evento 2 -->
+        <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-8 hover:border-pink-500 hover:bg-white/10 transition duration-300">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="space-y-3 flex-1">
+              <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">Próximamente</p>
+              <h3 class="text-2xl font-bold font-['Playfair_Display']">Festival Música Viva 2026</h3>
+              <p class="text-gray-400">Valparaíso, Chile</p>
+              <div class="space-y-2 pt-4 text-lg">
+                <p>📅 <strong>25 de Febrero, 2026</strong></p>
+                <p>🕖 <strong>18:00 hrs</strong></p>
+                <p>📍 <strong>Parque Cultural - Costanera Central</strong></p>
+              </div>
+            </div>
+            <a href="#" class="bg-neutral-700 hover:bg-neutral-600 px-8 py-3 rounded-lg font-semibold transition whitespace-nowrap">Más info</a>
+          </div>
+        </div>
+
+        <!-- Evento 3 -->
+        <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-8 hover:border-pink-500 hover:bg-white/10 transition duration-300">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="space-y-3 flex-1">
+              <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">Próximamente</p>
+              <h3 class="text-2xl font-bold font-['Playfair_Display']">Sesión Acústica - Café Melódico</h3>
+              <p class="text-gray-400">Santiago, Chile</p>
+              <div class="space-y-2 pt-4 text-lg">
+                <p>📅 <strong>10 de Marzo, 2026</strong></p>
+                <p>🕖 <strong>19:00 hrs</strong></p>
+                <p>📍 <strong>Café Melódico - Barrio Italia</strong></p>
+              </div>
+            </div>
+            <a href="#" class="bg-neutral-700 hover:bg-neutral-600 px-8 py-3 rounded-lg font-semibold transition whitespace-nowrap">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suscribirse -->
+      <div class="mt-20 p-12 bg-linear-to-r from-pink-900/30 to-pink-950/30 rounded-lg border border-pink-500/30 text-center">
+        <h2 class="text-3xl font-bold font-['Playfair_Display'] mb-4">¿No quieres perderte ningún evento?</h2>
+        <p class="text-gray-400 mb-6">Suscríbete para recibir notificaciones sobre mis próximas presentaciones</p>
+        <div class="flex gap-4 max-w-md mx-auto">
+          <input type="email" placeholder="Tu correo" class="flex-1 p-3 bg-neutral-900 border border-pink-500/30 rounded-lg focus:outline-none focus:border-pink-500" />
+          <button class="bg-pink-500 hover:bg-pink-600 px-6 py-3 rounded-lg font-semibold transition">Suscribir</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

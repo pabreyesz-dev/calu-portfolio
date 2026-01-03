@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  centered?: boolean;
+}
+
+const { title, subtitle, centered = true } = Astro.props;
+---
+
+<div class={`mb-12 ${centered ? 'text-center' : ''}`}>
+  <h2 class="text-4xl md:text-5xl font-bold font-['Playfair_Display'] mb-4">
+    {title}
+  </h2>
+  {subtitle && (
+    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+      {subtitle}
+    </p>
+  )}
+  <div class="flex gap-2 justify-center mt-6">
+    <div class="w-12 h-1 bg-pink-500 rounded-full"></div>
+    <div class="w-4 h-1 bg-pink-500/50 rounded-full"></div>
+  </div>
+</div>
