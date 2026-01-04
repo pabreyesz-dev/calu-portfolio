@@ -1,0 +1,304 @@
+---
+// Card para mostrar una canción con opción de reproducir
+interface Props {
+  title: string;
+  artist?: string;
+  duration?: string;
+  year?: string;
+  image?: string;
+  spotifyTrackId?: string;
+  spotifyUrl?: string;
+  albumName?: string;
+}
+
+const { 
+  title, 
+  artist = 'CALÚ',
+  duration,
+  year,
+  image,
+  spotifyTrackId,
+  spotifyUrl,
+  albumName
+} = Astro.props;
+---
+
+<div class="song-card group">
+  {image && (
+    <div class="song-image-container">
+      <img src={image} alt={title} class="song-image" loading="lazy" />
+      <div class="play-overlay">
+        {spotifyTrackId ? (
+          <button 
+            class="play-button"
+            data-track-id={spotifyTrackId}
+            aria-label={`Reproducir ${title}`}
+          >
+            <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+        ) : spotifyUrl ? (
+          <a 
+            href={spotifyUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="play-button"
+            aria-label={`Abrir ${title} en Spotify`}
+          >
+            <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </a>
+        ) : null}
+      </div>
+    </div>
+  )}
+  
+  <div class="song-info">
+    <h3 class="song-title">{title}</h3>
+    {albumName && (
+      <p class="song-album">{albumName}</p>
+    )}
+    <div class="song-meta">
+      {year && <span class="song-year">{year}</span>}
+      {duration && <span class="song-duration">{duration}</span>}
+    </div>
+  </div>
+</div>
+
+<script>
+  // Manejar clic en botón de play para mostrar reproductor
+  document.addEventListener('DOMContentLoaded', () => {
+    const playButtons = document.querySelectorAll('[data-track-id]');
+    
+    playButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const trackId = button.getAttribute('data-track-id');
+        if (!trackId) return;
+        
+        // Crear o mostrar modal con reproductor
+        showPlayerModal(trackId);
+      });
+    });
+  });
+  
+  function showPlayerModal(trackId: string) {
+    // Buscar si ya existe un modal
+    let modal = document.getElementById('spotify-player-modal');
+    
+    if (!modal) {
+      // Crear modal
+      modal = document.createElement('div');
+      modal.id = 'spotify-player-modal';
+      modal.className = 'spotify-modal';
+      modal.innerHTML = `
+        <div class="spotify-modal-content">
+          <button class="spotify-modal-close" aria-label="Cerrar">×</button>
+          <div id="spotify-player-container"></div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      
+      // Cerrar modal
+      const closeBtn = modal.querySelector('.spotify-modal-close');
+      closeBtn?.addEventListener('click', () => {
+        modal?.remove();
+      });
+      
+      // Cerrar al hacer clic fuera
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.remove();
+        }
+      });
+    }
+    
+    // Actualizar iframe
+    const container = document.getElementById('spotify-player-container');
+    if (container) {
+      container.innerHTML = `
+        <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/track/${trackId}?utm_source=generator&theme=black"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allowfullscreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      `;
+    }
+    
+    // Mostrar modal
+    modal.style.display = 'flex';
+  }
+</script>
+
+<style>
+  .song-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .song-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color, #EC4899);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  .song-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #000;
+  }
+  
+  .song-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .song-card:hover .song-image {
+    transform: scale(1.1);
+  }
+  
+  .play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .song-card:hover .play-overlay {
+    opacity: 1;
+  }
+  
+  .play-button {
+    background: var(--primary-color, #EC4899);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: white;
+  }
+  
+  .play-button:hover {
+    transform: scale(1.1);
+    background: var(--accent-color, #F472B6);
+  }
+  
+  .play-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 3px; /* Ajuste visual para centrar el play */
+  }
+  
+  .song-info {
+    padding: 1.25rem;
+  }
+  
+  .song-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+  
+  .song-album {
+    font-size: 0.875rem;
+    color: var(--accent-color, #F472B6);
+    margin-bottom: 0.5rem;
+  }
+  
+  .song-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Modal del reproductor */
+  .spotify-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 1rem;
+  }
+  
+  .spotify-modal-content {
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    border: 2px solid var(--primary-color, #EC4899);
+  }
+  
+  .spotify-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+  
+  .spotify-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color, #F472B6);
+  }
+  
+  #spotify-player-container {
+    width: 100%;
+  }
+  
+  #spotify-player-container iframe {
+    width: 100%;
+    min-height: 352px;
+  }
+  
+  @media (max-width: 768px) {
+    .song-info {
+      padding: 1rem;
+    }
+    
+    .spotify-modal-content {
+      padding: 1.5rem;
+    }
+  }
+</style>
+

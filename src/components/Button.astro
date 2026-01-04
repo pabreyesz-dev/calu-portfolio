@@ -3,16 +3,30 @@ interface Props {
   href?: string;
   variant?: 'primary' | 'secondary';
   class?: string;
+  target?: string;
 }
 
-const { href = '#', variant = 'primary', class: className = '' } = Astro.props;
+const { href = '#', variant = 'primary', class: className = '', target } = Astro.props;
 const baseStyles = 'px-4 py-2 rounded-lg transition duration-300 font-medium uppercase tracking-wider text-xs md:text-sm';
 const variantStyles = {
-  primary: 'bg-pink-500 hover:bg-pink-600 text-white',
+  primary: 'text-white',
   secondary: 'border border-white text-white hover:bg-white hover:text-black'
 };
 ---
 
-<a href={href} class={`${baseStyles} ${variantStyles[variant]} ${className}`}>
+<a 
+  href={href} 
+  class={`${baseStyles} ${variantStyles[variant]} ${className} ${variant === 'primary' ? 'button-primary' : ''}`}
+  {target ? { target, rel: 'noopener noreferrer' } : {}}
+>
   <slot />
 </a>
+
+<style>
+  .button-primary {
+    background-color: var(--primary-color, #EC4899);
+  }
+  .button-primary:hover {
+    background-color: var(--secondary-color, #831843);
+  }
+</style>

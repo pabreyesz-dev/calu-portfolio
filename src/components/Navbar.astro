@@ -1,4 +1,4 @@
-<nav class="w-full fixed top-0 left-0 z-50 bg-black/90 backdrop-blur-md border-b" style="border-color: var(--primary-color, #EC4899) + '33'">
+<nav class="w-full fixed top-0 left-0 z-50 bg-black/90 backdrop-blur-md border-b" style="border-color: var(--primary-color, #EC4899)">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     
     <!-- Logo / Nombre artista -->
@@ -8,13 +8,12 @@
 
     <!-- Links Desktop -->
     <ul class="hidden md:flex gap-8 text-xs uppercase tracking-wider text-white">
-      <li><a href="/" class="transition duration-300" style="color: inherit; --tw-text-opacity: 1; --hover-color: var(--accent-color, #F472B6);" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Inicio</a></li>
-      <li><a href="/biography" class="transition duration-300" style="color: inherit;" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Biografía</a></li>
-      <li><a href="/music" class="transition duration-300" style="color: inherit;" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Música</a></li>
-      <li><a href="/galery" class="transition duration-300" style="color: inherit;" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Galería</a></li>
-      <li><a href="/events" class="transition duration-300" style="color: inherit;" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Eventos</a></li>
-      <li><a href="/press" class="transition duration-300" style="color: inherit;" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Prensa</a></li>
-      <li><a href="/contact" class="transition duration-300" style="color: inherit;" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Contacto</a></li>
+      <li><a href="/" class="transition duration-300 nav-link" data-i18n="myMusic" data-nav-link>Mi Música</a></li>
+      <li><a href="/biography" class="transition duration-300 nav-link" data-i18n="biography" data-nav-link>Biografía</a></li>
+      <li><a href="/galery" class="transition duration-300 nav-link" data-i18n="galery" data-nav-link>Galería</a></li>
+      <li><a href="/events" class="transition duration-300 nav-link" data-i18n="events" data-nav-link>Eventos</a></li>
+      <li><a href="/press" class="transition duration-300 nav-link" data-i18n="press" data-nav-link>Prensa</a></li>
+      <li><a href="/contact" class="transition duration-300 nav-link" data-i18n="contact" data-nav-link>Contacto</a></li>
     </ul>
 
     <!-- Hamburger Menu Mobile -->
@@ -27,15 +26,14 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden md:hidden bg-black/95 border-t" style="border-color: var(--primary-color, #EC4899) + '33'">
+  <div id="mobileMenu" class="hidden md:hidden bg-black/95 border-t" style="border-color: var(--primary-color, #EC4899)">
     <ul class="flex flex-col gap-4 text-sm uppercase tracking-wider text-white p-6">
-      <li><a href="/" class="transition duration-300 block" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Inicio</a></li>
-      <li><a href="/biography" class="transition duration-300 block" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Biografía</a></li>
-      <li><a href="/music" class="transition duration-300 block" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Música</a></li>
-      <li><a href="/galery" class="transition duration-300 block" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Galería</a></li>
-      <li><a href="/events" class="transition duration-300 block" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Eventos</a></li>
-      <li><a href="/press" class="transition duration-300 block" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Prensa</a></li>
-      <li><a href="/contact" class="transition duration-300 block" onmouseover="this.style.color = 'var(--accent-color, #F472B6)'" onmouseout="this.style.color = 'inherit'">Contacto</a></li>
+      <li><a href="/" class="transition duration-300 block nav-link" data-i18n="myMusic" data-nav-link>Mi Música</a></li>
+      <li><a href="/biography" class="transition duration-300 block nav-link" data-i18n="biography" data-nav-link>Biografía</a></li>
+      <li><a href="/galery" class="transition duration-300 block nav-link" data-i18n="galery" data-nav-link>Galería</a></li>
+      <li><a href="/events" class="transition duration-300 block nav-link" data-i18n="events" data-nav-link>Eventos</a></li>
+      <li><a href="/press" class="transition duration-300 block nav-link" data-i18n="press" data-nav-link>Prensa</a></li>
+      <li><a href="/contact" class="transition duration-300 block nav-link" data-i18n="contact" data-nav-link>Contacto</a></li>
     </ul>
   </div>
 </nav>
@@ -57,4 +55,60 @@
       });
     });
   }
+  
+  // Resaltar enlace activo en el navbar
+  function highlightActiveLink() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPath || (currentPath === '/' && href === '/')) {
+        link.classList.add('nav-link-active');
+      } else {
+        link.classList.remove('nav-link-active');
+      }
+    });
+  }
+  
+  // Ejecutar al cargar y cuando cambie la ruta
+  if (typeof window !== 'undefined') {
+    window.addEventListener('DOMContentLoaded', highlightActiveLink);
+    window.addEventListener('popstate', highlightActiveLink);
+  }
 </script>
+
+<style>
+  .nav-link {
+    color: inherit;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color, #EC4899);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--accent-color, #F472B6);
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link-active {
+    color: var(--primary-color, #EC4899) !important;
+  }
+  
+  .nav-link-active::after {
+    width: 100%;
+  }
+</style>

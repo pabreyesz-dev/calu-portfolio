@@ -91,9 +91,18 @@
   }
 
   // Cambiar idioma
-  function changeLanguage(lang: string) {
+  async function changeLanguage(lang: string) {
     localStorage.setItem('language', lang);
-    location.reload();
+    
+    // Aplicar traducciones sin recargar
+    try {
+      const { applyTranslations } = await import('../scripts/i18n.ts');
+      applyTranslations(lang as 'es' | 'en');
+      updateLanguageButtons(lang);
+    } catch (e) {
+      // Si falla, recargar la página
+      location.reload();
+    }
   }
 
   // Actualizar estado de botones de idioma
@@ -120,12 +129,20 @@
   document.getElementById('lang-en')?.addEventListener('click', () => changeLanguage('en'));
 
   // Inicializar al cargar
-  window.addEventListener('load', () => {
+  window.addEventListener('load', async () => {
     const savedTheme = (localStorage.getItem('theme') as keyof typeof themes) || 'pink';
     const savedLanguage = localStorage.getItem('language') || 'es';
     
     applyTheme(savedTheme);
     updateLanguageButtons(savedLanguage);
+    
+    // Aplicar traducciones
+    try {
+      const { applyTranslations } = await import('../scripts/i18n.ts');
+      applyTranslations(savedLanguage as 'es' | 'en');
+    } catch (e) {
+      console.error('Error loading translations:', e);
+    }
   });
 </script>
 

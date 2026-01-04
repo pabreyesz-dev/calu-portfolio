@@ -26,10 +26,10 @@
 
 @keyframes glow {
   0%, 100% {
-    text-shadow: 0 0 5px rgba(236, 72, 153, 0.3);
+    text-shadow: 0 0 5px var(--primary-color, rgba(236, 72, 153, 0.3));
   }
   50% {
-    text-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+    text-shadow: 0 0 20px var(--primary-color, rgba(236, 72, 153, 0.8));
   }
 }
 
@@ -72,12 +72,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ec4899;
+  background: var(--primary-color, #ec4899);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #db2777;
+  background: var(--secondary-color, #db2777);
 }
 
 /* =================================
@@ -102,7 +102,7 @@ a {
 }
 
 a:hover {
-  color: #ec4899;
+  color: var(--accent-color, #ec4899);
 }
 
 /* =================================
@@ -117,7 +117,7 @@ button, [role="button"] {
 button:focus, [role="button"]:focus {
   outline: none;
   ring: 2px;
-  ring-color: #ec4899;
+  ring-color: var(--primary-color, #ec4899);
 }
 
 /* =================================

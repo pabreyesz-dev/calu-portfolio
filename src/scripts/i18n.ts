@@ -1,4 +1,4 @@
-// Archivo de traducciones
+// Script para manejar traducciones en el cliente
 export const translations = {
   es: {
     // Navbar
@@ -9,6 +9,7 @@ export const translations = {
     events: 'Eventos',
     press: 'Prensa',
     contact: 'Contacto',
+    home: 'Inicio',
     
     // Home
     welcomeTitle: 'Bienvenido a mi mundo musical',
@@ -36,6 +37,10 @@ export const translations = {
     gallery: 'Galería',
     contactMe: 'Contactame',
     
+    // Footer
+    followMe: 'Sígueme',
+    links: 'Enlaces',
+    
     // Theme
     themeLabel: 'Tema',
     languageLabel: 'Idioma',
@@ -49,6 +54,7 @@ export const translations = {
     events: 'Events',
     press: 'Press',
     contact: 'Contact',
+    home: 'Home',
     
     // Home
     welcomeTitle: 'Welcome to my musical world',
@@ -76,14 +82,31 @@ export const translations = {
     gallery: 'Gallery',
     contactMe: 'Contact me',
     
+    // Footer
+    followMe: 'Follow me',
+    links: 'Links',
+    
     // Theme
     themeLabel: 'Theme',
     languageLabel: 'Language',
   }
+};
+
+export function applyTranslations(lang: 'es' | 'en') {
+  const t = translations[lang];
+  document.documentElement.setAttribute('lang', lang);
+  document.documentElement.setAttribute('data-language', lang);
+  
+  // Actualizar elementos con data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key && t[key as keyof typeof t]) {
+      el.textContent = t[key as keyof typeof t];
+    }
+  });
 }
 
-export type Language = 'es' | 'en'
-
-export function getTranslation(lang: Language, key: keyof typeof translations.es): string {
-  return translations[lang][key as keyof typeof translations[lang]] || key
+export function getCurrentLanguage(): 'es' | 'en' {
+  return (localStorage.getItem('language') || 'es') as 'es' | 'en';
 }
+

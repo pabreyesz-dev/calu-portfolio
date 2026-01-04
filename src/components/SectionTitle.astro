@@ -18,7 +18,18 @@ const { title, subtitle, centered = true } = Astro.props;
     </p>
   )}
   <div class="flex gap-2 justify-center mt-6">
-    <div class="w-12 h-1 bg-pink-500 rounded-full"></div>
-    <div class="w-4 h-1 bg-pink-500/50 rounded-full"></div>
+    <div class="w-12 h-1 rounded-full section-line"></div>
+    <div class="w-4 h-1 rounded-full section-line-secondary"></div>
   </div>
+</div>
+
+<style>
+  .section-line {
+    background-color: var(--primary-color, #EC4899);
+  }
+  .section-line-secondary {
+    background-color: var(--primary-color, #EC4899);
+    opacity: 0.5;
+  }
+</style>
 </div>
