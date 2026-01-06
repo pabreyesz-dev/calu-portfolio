@@ -8,65 +8,33 @@ export interface Album {
   image: string;
   releaseDate: string;
   spotifyUrl: string;
-  type: 'album' | 'single';
+  type: 'album' | 'single' | 'ep';
 }
 
-// Datos de álbumes basados en la información de Spotify
+// Álbumes de Calú - Solo álbumes completos
 export const albums: Album[] = [
-  {
-    id: 'no-hay-compe',
-    name: 'No Hay Compe',
-    image: 'https://i.scdn.co/image/ab67616d0000b273...', // URL de la imagen de Spotify
-    releaseDate: '2025',
-    spotifyUrl: 'https://open.spotify.com/album/...',
-    type: 'single'
-  },
-  {
-    id: 'tu-nombre',
-    name: 'Tu nombre',
-    image: 'https://i.scdn.co/image/ab67616d0000b273...',
-    releaseDate: '2025',
-    spotifyUrl: 'https://open.spotify.com/album/...',
-    type: 'single'
-  },
-  {
-    id: 'la-ultima-vez',
-    name: 'La Última Vez',
-    image: 'https://i.scdn.co/image/ab67616d0000b273...',
-    releaseDate: '2024',
-    spotifyUrl: 'https://open.spotify.com/album/...',
-    type: 'single'
-  },
   {
     id: 'sie7e-oros',
     name: 'Sie7e Oros',
-    image: 'https://i.scdn.co/image/ab67616d0000b273...',
+    image: '', // Agregar URL de la portada de Spotify
     releaseDate: '2024',
-    spotifyUrl: 'https://open.spotify.com/album/...',
-    type: 'album'
-  },
-  {
-    id: 'la-jugadora',
-    name: 'La Jugadora',
-    image: 'https://i.scdn.co/image/ab67616d0000b273...',
-    releaseDate: '2023',
-    spotifyUrl: 'https://open.spotify.com/album/...',
+    spotifyUrl: '', // Agregar URL del álbum en Spotify
     type: 'album'
   },
   {
     id: 'la-emperatriz',
     name: 'La Emperatriz',
-    image: 'https://i.scdn.co/image/ab67616d0000b273...',
+    image: '', // Agregar URL de la portada de Spotify
     releaseDate: '2022',
-    spotifyUrl: 'https://open.spotify.com/album/...',
+    spotifyUrl: '', // Agregar URL del álbum en Spotify
     type: 'album'
   },
   {
     id: 'liberacion',
     name: 'Liberación',
-    image: 'https://i.scdn.co/image/ab67616d0000b273...',
+    image: '', // Agregar URL de la portada de Spotify
     releaseDate: '2018',
-    spotifyUrl: 'https://open.spotify.com/album/...',
+    spotifyUrl: '', // Agregar URL del álbum en Spotify
     type: 'album'
   }
 ];

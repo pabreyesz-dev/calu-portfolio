@@ -8,7 +8,7 @@ export interface Album {
   image: string;
   releaseDate: string;
   spotifyUrl: string;
-  type: 'album' | 'single';
+  type: 'album' | 'single' | 'ep';
   colors?: {
     primary: string;
     accent: string;

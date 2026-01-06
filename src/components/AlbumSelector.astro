@@ -15,67 +15,33 @@
     image: string;
     releaseDate: string;
     spotifyUrl: string;
-    type: 'album' | 'single';
+    type: 'album' | 'single' | 'ep';
   }
   
-  // Datos de álbumes de Calú
-  // Para obtener las URLs reales: ve a cada álbum en Spotify, clic derecho en la portada → "Copiar dirección de imagen"
-  // Formato típico: https://i.scdn.co/image/ab67616d0000b273[HASH]
+  // Álbumes de Calú - Solo álbumes completos
   const albums: Album[] = [
-    {
-      id: 'no-hay-compe',
-      name: 'No Hay Compe',
-      image: 'https://i.scdn.co/image/ab67616d0000b273placeholder', // Actualizar con URL real
-      releaseDate: '2025',
-      spotifyUrl: 'https://open.spotify.com/album/7l8ZnvSgps3wMZWonJTgUk',
-      type: 'single'
-    },
-    {
-      id: 'tu-nombre',
-      name: 'Tu nombre',
-      image: 'https://i.scdn.co/image/ab67616d0000b273placeholder', // Actualizar con URL real
-      releaseDate: '2025',
-      spotifyUrl: 'https://open.spotify.com/album/7l8ZnvSgps3wMZWonJTgUk',
-      type: 'single'
-    },
-    {
-      id: 'la-ultima-vez',
-      name: 'La Última Vez',
-      image: 'https://i.scdn.co/image/ab67616d0000b273placeholder', // Actualizar con URL real
-      releaseDate: '2024',
-      spotifyUrl: 'https://open.spotify.com/album/7l8ZnvSgps3wMZWonJTgUk',
-      type: 'single'
-    },
     {
       id: 'sie7e-oros',
       name: 'Sie7e Oros',
-      image: 'https://i.scdn.co/image/ab67616d0000b273placeholder', // Actualizar con URL real
+      image: '', // Agregar URL de la portada de Spotify
       releaseDate: '2024',
-      spotifyUrl: 'https://open.spotify.com/album/7l8ZnvSgps3wMZWonJTgUk',
-      type: 'album'
-    },
-    {
-      id: 'la-jugadora',
-      name: 'La Jugadora',
-      image: 'https://i.scdn.co/image/ab67616d0000b273placeholder', // Actualizar con URL real
-      releaseDate: '2023',
-      spotifyUrl: 'https://open.spotify.com/album/7l8ZnvSgps3wMZWonJTgUk',
+      spotifyUrl: '', // Agregar URL del álbum en Spotify
       type: 'album'
     },
     {
       id: 'la-emperatriz',
       name: 'La Emperatriz',
-      image: 'https://i.scdn.co/image/ab67616d0000b273placeholder', // Actualizar con URL real
+      image: '', // Agregar URL de la portada de Spotify
       releaseDate: '2022',
-      spotifyUrl: 'https://open.spotify.com/album/7l8ZnvSgps3wMZWonJTgUk',
+      spotifyUrl: '', // Agregar URL del álbum en Spotify
       type: 'album'
     },
     {
       id: 'liberacion',
       name: 'Liberación',
-      image: 'https://i.scdn.co/image/ab67616d0000b273placeholder', // Actualizar con URL real
+      image: '', // Agregar URL de la portada de Spotify
       releaseDate: '2018',
-      spotifyUrl: 'https://open.spotify.com/album/7l8ZnvSgps3wMZWonJTgUk',
+      spotifyUrl: '', // Agregar URL del álbum en Spotify
       type: 'album'
     }
   ];
