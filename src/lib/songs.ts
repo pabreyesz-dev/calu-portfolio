@@ -116,14 +116,144 @@ export const songs: Song[] = [
     image: 'https://i.scdn.co/image/ab67616d00001e025bee207d9da5ad6af1214921'
   },
   {
-    id: 'libre-por-la-ciudad',
-    title: 'Libre por la Ciudad',
-    album: 'Liberación',
-    year: '2018',
-    duration: '4:00',
-    spotifyTrackId: '', // Agregar trackId aquí
-    spotifyUrl: 'https://open.spotify.com/track/...',
-    image: 'https://i.scdn.co/image/...'
+    id: 'gane-el-juego',
+    title: 'Gané el Juego',
+    album: 'Gané el Juego',
+    year: '2023',
+    duration: '3:13',
+    spotifyTrackId: '1uGj3rDsNbwg2U38tIAUaJ',
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/1uGj3rDsNbwg2U38tIAUaJ',
+    image: 'https://i.scdn.co/image/ab67616d00001e020a719ec2ecbb1df98613d6e3'
+  },
+  {
+    id: 'vas-a-ser-mio',
+    title: 'Vas a Ser Mío',
+    album: 'Vas a Ser Mío',
+    year: '2023',
+    duration: '3:46',
+    spotifyTrackId: '1rrHZ1iqCJSmY60SNE9goe', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/1rrHZ1iqCJSmY60SNE9goe',
+    image: 'https://i.scdn.co/image/ab67616d00001e0271a8d48a7e022b3bcde5ce6b'
+  },
+  {
+    id: 'dependencia',
+    title: 'Dependencia',
+    album: 'Dependencia',
+    year: '2022',
+    duration: '2:43',
+    spotifyTrackId: '70aK3BaJAgOB5Gh3fK05q4', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/70aK3BaJAgOB5Gh3fK05q4',
+    image: 'https://i.scdn.co/image/ab67616d00001e02e0d8d1ee5522dedc95e8e408'
+  },
+  {
+    id: 'no-puedo-obligarte',
+    title: 'No Puedo Obligarte',
+    album: 'No Puedo Obligarte',
+    year: '2022',
+    duration: '3:04',
+    spotifyTrackId: '38B35yHz8XlBAwNmuauV7w', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/38B35yHz8XlBAwNmuauV7w',
+    image: 'https://i.scdn.co/image/ab67616d00001e02ff779aa4d27caaeeee498a5c'
+  },
+  {
+    id: 'ritual',
+    title: 'Ritual',
+    album: 'Ritual',
+    year: '2022',
+    duration: '3:11',
+    spotifyTrackId: '2JGb5vImRtuUAZWTzGb968', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/2JGb5vImRtuUAZWTzGb968',
+    image: 'https://i.scdn.co/image/ab67616d00001e028b2ff438abf76268be4f1ce4'
+  },
+  {
+    id: 'irma',
+    title: 'Irma',
+    album: 'Irma',
+    year: '2021',
+    duration: '2:41',
+    spotifyTrackId: '2FjJuqmIrQLdMxbaCR6ssC', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/2FjJuqmIrQLdMxbaCR6ssC',
+    image: 'https://i.scdn.co/image/ab67616d00001e0256f04264119f715e4ba3aa08'
+  },
+  {
+    id: 'castillo',
+    title: 'Castillo',
+    album: 'Castillo',
+    year: '2021',
+    duration: '3:15',
+    spotifyTrackId: '0zUjsqsdz1Cu5CD2IJLUL2', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/0zUjsqsdz1Cu5CD2IJLUL2',
+    image: 'https://i.scdn.co/image/ab67616d00001e021feb50f1411f1e2f3c7cd2b2'
+  },
+  {
+    id: 'one-kiss',
+    title: 'One Kiss',
+    album: 'One Kiss',
+    year: '2021',
+    duration: '2:50',
+    spotifyTrackId: '0Gqe9XLNaURwfe0VIFZnN2', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/0Gqe9XLNaURwfe0VIFZnN2',
+    image: 'https://i.scdn.co/image/ab67616d00001e027e149ca4ed2cc20a5473fa91'
+  },
+  {
+    id: 'ilusion',
+    title: 'Ilusión',
+    album: 'Ilusión',
+    year: '2021',
+    duration: '3:49',
+    spotifyTrackId: '3VBM2BgIqHKal5XwgT1pKy', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/3VBM2BgIqHKal5XwgT1pKy',
+    image: 'https://i.scdn.co/image/ab67616d00001e02fd02f1c29243bbecdfcb6f23'
+  },
+  {
+    id: 'naufraga',
+    title: 'Naufraga',
+    album: 'Naufraga',
+    year: '2020',
+    duration: '3:39',
+    spotifyTrackId: '2nccvhfWV87SWX4Zfj2cmJ', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/2nccvhfWV87SWX4Zfj2cmJ',
+    image: 'https://i.scdn.co/image/ab67616d00001e0255d2311865506a646672e3c9'
+  },
+  {
+    id: 'instagram',
+    title: 'Instagram',
+    album: 'Instagram',
+    year: '2020',
+    duration: '3:30',
+    spotifyTrackId: '2Ju8DwOjWtxtny9xUEjcOJ', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/2Ju8DwOjWtxtny9xUEjcOJ',
+    image: 'https://i.scdn.co/image/ab67616d00001e0282a16243c4afdb60db21a0ed'
+  },
+  {
+    id: 'incontrolable',
+    title: 'Incontrolable',
+    album: 'Incontrolable',
+    year: '2019',
+    duration: '3:14',
+    spotifyTrackId: '0vWpO0xOJZliE3ekN5umgA', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/0vWpO0xOJZliE3ekN5umgA',
+    image: 'https://i.scdn.co/image/ab67616d00001e028c1de04c6c526fbf2ba2f3f0'
+  },
+  {
+    id: 'leon',
+    title: 'León',
+    album: 'León',
+    year: '2019',
+    duration: '3:11',
+    spotifyTrackId: '1duebUEwksxhgEvgridnYG', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/1duebUEwksxhgEvgridnYG',
+    image: 'https://i.scdn.co/image/ab67616d00001e02da93e33a2327103e750afa1d'
+  },
+  {
+    id: 'retornar',
+    title: 'Retornar',
+    album: 'Retornar',
+    year: '2019',
+    duration: '3:38',
+    spotifyTrackId: '3hj4Nqh7LwpvCgfv7lI3Sw', 
+    spotifyUrl: 'https://open.spotify.com/intl-es/track/3hj4Nqh7LwpvCgfv7lI3Sw',
+    image: 'https://i.scdn.co/image/ab67616d00001e02ff3a3fdc4f6f842497b31f8b'
   }
 ];
 
