@@ -1,0 +1,83 @@
+---
+---
+<div class="relative inline-block text-left group z-50 language-picker-component">
+    <button
+        type="button"
+        class="inline-flex justify-center items-center w-full px-3 py-2 text-sm font-medium text-white bg-transparent border border-white/20 rounded-md shadow-sm hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 transition-all duration-200"
+        aria-expanded="true"
+        aria-haspopup="true"
+    >
+        <span class="mr-2 current-lang-flag">🇪🇸</span>
+        <span class="uppercase current-lang-text">ES</span>
+        <svg class="-mr-1 ml-2 h-5 w-5 text-pink-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <div
+        class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-black/95 border border-pink-500/30 ring-1 ring-black ring-opacity-5 focus:outline-none opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 backdrop-blur-sm"
+        role="menu"
+        aria-orientation="vertical"
+    >
+        <div class="py-1" role="none">
+            <button
+                class="block w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-white/10 hover:text-white lang-option transition-colors"
+                role="menuitem"
+                data-lang="es"
+            >
+                <span class="mr-2">🇪🇸</span>
+                ESPAÑOL
+            </button>
+            <button
+                class="block w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-white/10 hover:text-white lang-option transition-colors"
+                role="menuitem"
+                data-lang="en"
+            >
+                <span class="mr-2">🇺🇸</span>
+                ENGLISH
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    import { applyTranslations } from '../scripts/i18n.ts';
+
+    function updateAllPickers(lang: 'es' | 'en') {
+        const flag = lang === 'es' ? '🇪🇸' : '🇺🇸';
+        const text = lang === 'es' ? 'ES' : 'EN';
+        
+        document.querySelectorAll('.current-lang-flag').forEach(el => el.textContent = flag);
+        document.querySelectorAll('.current-lang-text').forEach(el => el.textContent = text);
+        
+        // Highlight active option
+        document.querySelectorAll('.lang-option').forEach(el => {
+            if ((el as HTMLElement).dataset.lang === lang) {
+                el.classList.add('bg-white/5', 'font-bold', 'text-pink-500');
+            } else {
+                el.classList.remove('bg-white/5', 'font-bold', 'text-pink-500');
+            }
+        });
+    }
+
+    // Initialize state
+    const currentLang = (localStorage.getItem('language') || 'es') as 'es' | 'en';
+    updateAllPickers(currentLang);
+
+    // Setup active listeners
+    document.querySelectorAll('.lang-option').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const target = e.currentTarget as HTMLElement;
+            const lang = target.dataset.lang as 'es' | 'en';
+            
+            // Save preference
+            localStorage.setItem('language', lang);
+            
+            // Apply translations
+            applyTranslations(lang);
+            
+            // Update UI
+            updateAllPickers(lang);
+        });
+    });
+</script>

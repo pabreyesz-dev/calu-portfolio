@@ -7,10 +7,10 @@ import SectionTitle from "../components/SectionTitle.astro";
   <!-- Hero Section -->
   <section class="relative min-h-[60vh] flex items-center justify-center text-center px-6 pt-10 bg-linear-to-br from-black via-pink-950/20 to-black">
     <div class="max-w-4xl z-10">
-      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6">
+      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6" data-i18n="galleryHeroTitle">
         Galería
       </h1>
-      <p class="text-xl text-gray-300">
+      <p class="text-xl text-gray-300" data-i18n="galleryHeroSubtitle">
         Momentos capturados en vivo
       </p>
     </div>
@@ -22,14 +22,16 @@ import SectionTitle from "../components/SectionTitle.astro";
       <SectionTitle 
         title="Galería de Momentos"
         subtitle="Fotos y videos de mis presentaciones"
+        titleI18n="galleryTitle"
+        subtitleI18n="gallerySubtitle"
       />
 
       <!-- Filtros -->
       <div class="flex gap-4 justify-center mb-12 flex-wrap">
-        <button class="px-6 py-2 rounded-full bg-pink-500 hover:bg-pink-600 transition font-semibold">Todos</button>
-        <button class="px-6 py-2 rounded-full border border-pink-500 hover:bg-pink-500/10 transition font-semibold">Conciertos</button>
-        <button class="px-6 py-2 rounded-full border border-pink-500 hover:bg-pink-500/10 transition font-semibold">Estudio</button>
-        <button class="px-6 py-2 rounded-full border border-pink-500 hover:bg-pink-500/10 transition font-semibold">Eventos</button>
+        <button class="px-6 py-2 rounded-full bg-pink-500 hover:bg-pink-600 transition font-semibold" data-i18n="filterAll">Todos</button>
+        <button class="px-6 py-2 rounded-full border border-pink-500 hover:bg-pink-500/10 transition font-semibold" data-i18n="filterConcerts">Conciertos</button>
+        <button class="px-6 py-2 rounded-full border border-pink-500 hover:bg-pink-500/10 transition font-semibold" data-i18n="filterStudio">Estudio</button>
+        <button class="px-6 py-2 rounded-full border border-pink-500 hover:bg-pink-500/10 transition font-semibold" data-i18n="filterEvents">Eventos</button>
       </div>
 
       <!-- Grid de imágenes -->
@@ -37,8 +39,8 @@ import SectionTitle from "../components/SectionTitle.astro";
         <div class="aspect-square bg-linear-to-br from-pink-600 to-pink-900 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
           <div class="w-full h-full flex items-center justify-center text-center p-6">
             <div>
-              <p class="text-white text-lg font-semibold">Concierto en Vivo</p>
-              <p class="text-pink-100 text-sm mt-2">Diciembre 2025</p>
+              <p class="text-white text-lg font-semibold" data-i18n="galleryItem1Title">Concierto en Vivo</p>
+              <p class="text-pink-100 text-sm mt-2" data-i18n="galleryItem1Date">Diciembre 2025</p>
             </div>
           </div>
         </div>
@@ -46,8 +48,8 @@ import SectionTitle from "../components/SectionTitle.astro";
         <div class="aspect-square bg-linear-to-br from-pink-700 to-pink-950 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
           <div class="w-full h-full flex items-center justify-center text-center p-6">
             <div>
-              <p class="text-white text-lg font-semibold">Sesión de Estudio</p>
-              <p class="text-pink-100 text-sm mt-2">Noviembre 2025</p>
+              <p class="text-white text-lg font-semibold" data-i18n="galleryItem2Title">Sesión de Estudio</p>
+              <p class="text-pink-100 text-sm mt-2" data-i18n="galleryItem2Date">Noviembre 2025</p>
             </div>
           </div>
         </div>
@@ -55,8 +57,8 @@ import SectionTitle from "../components/SectionTitle.astro";
         <div class="aspect-square bg-linear-to-br from-pink-600 to-rose-900 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
           <div class="w-full h-full flex items-center justify-center text-center p-6">
             <div>
-              <p class="text-white text-lg font-semibold">Presentación Festival</p>
-              <p class="text-pink-100 text-sm mt-2">Octubre 2025</p>
+              <p class="text-white text-lg font-semibold" data-i18n="galleryItem3Title">Presentación Festival</p>
+              <p class="text-pink-100 text-sm mt-2" data-i18n="galleryItem3Date">Octubre 2025</p>
             </div>
           </div>
         </div>
@@ -64,8 +66,8 @@ import SectionTitle from "../components/SectionTitle.astro";
         <div class="aspect-square bg-linear-to-br from-pink-700 to-pink-950 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
           <div class="w-full h-full flex items-center justify-center text-center p-6">
             <div>
-              <p class="text-white text-lg font-semibold">Ensayo General</p>
-              <p class="text-pink-100 text-sm mt-2">Septiembre 2025</p>
+              <p class="text-white text-lg font-semibold" data-i18n="galleryItem4Title">Ensayo General</p>
+              <p class="text-pink-100 text-sm mt-2" data-i18n="galleryItem4Date">Septiembre 2025</p>
             </div>
           </div>
         </div>
@@ -73,8 +75,8 @@ import SectionTitle from "../components/SectionTitle.astro";
         <div class="aspect-square bg-linear-to-br from-pink-600 to-pink-900 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
           <div class="w-full h-full flex items-center justify-center text-center p-6">
             <div>
-              <p class="text-white text-lg font-semibold">Colaboración Artística</p>
-              <p class="text-pink-100 text-sm mt-2">Agosto 2025</p>
+              <p class="text-white text-lg font-semibold" data-i18n="galleryItem5Title">Colaboración Artística</p>
+              <p class="text-pink-100 text-sm mt-2" data-i18n="galleryItem5Date">Agosto 2025</p>
             </div>
           </div>
         </div>
@@ -82,8 +84,8 @@ import SectionTitle from "../components/SectionTitle.astro";
         <div class="aspect-square bg-linear-to-br from-pink-700 to-pink-950 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition group">
           <div class="w-full h-full flex items-center justify-center text-center p-6">
             <div>
-              <p class="text-white text-lg font-semibold">Backstage Momento</p>
-              <p class="text-pink-100 text-sm mt-2">Julio 2025</p>
+              <p class="text-white text-lg font-semibold" data-i18n="galleryItem6Title">Backstage Momento</p>
+              <p class="text-pink-100 text-sm mt-2" data-i18n="galleryItem6Date">Julio 2025</p>
             </div>
           </div>
         </div>
@@ -91,7 +93,7 @@ import SectionTitle from "../components/SectionTitle.astro";
 
       <!-- Nota -->
       <div class="mt-16 text-center p-8 border border-pink-500/30 rounded-lg bg-neutral-900/50">
-        <p class="text-gray-400">Las imágenes de alta calidad estarán disponibles próximamente. Sigue mis redes sociales para más contenido visual.</p>
+        <p class="text-gray-400" data-i18n="galleryNote">Las imágenes de alta calidad estarán disponibles próximamente. Sigue mis redes sociales para más contenido visual.</p>
       </div>
     </div>
   </section>

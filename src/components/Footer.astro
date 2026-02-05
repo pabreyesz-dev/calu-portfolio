@@ -10,7 +10,7 @@ import SocialLinks from './SocialLinks.astro';
       <!-- Sección de marca -->
       <div class="space-y-4">
         <h3 class="text-2xl font-bold font-['Playfair_Display']">CALÚ</h3>
-        <p class="text-sm text-gray-400 leading-relaxed">
+        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="footerDesc">
           Cantante, compositora y artista. Explorando nuevos sonidos y emociones a través de la música.
         </p>
       </div>
@@ -39,9 +39,9 @@ import SocialLinks from './SocialLinks.astro';
     <!-- Copyright -->
     <div class="text-center space-y-2">
       <p class="text-sm text-gray-400">
-        © {new Date().getFullYear()} CALÚ ® Todos los derechos reservados.
+        © {new Date().getFullYear()} CALÚ ® <span data-i18n="footerRights">Todos los derechos reservados.</span>
       </p>
-      <p class="text-xs text-gray-500">
+      <p class="text-xs text-gray-500" data-i18n="footerCredit">
         Diseñado y desarrollado con ❤️ por pachito
       </p>
     </div>

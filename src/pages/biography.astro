@@ -7,10 +7,10 @@ import SectionTitle from "../components/SectionTitle.astro";
   <!-- Hero Section -->
   <section class="relative min-h-[60vh] flex items-center justify-center text-center px-6 pt-10 bg-linear-to-br from-black via-pink-950/20 to-black">
     <div class="max-w-4xl z-10">
-      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6">
+      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6" data-i18n="bioHeroTitle">
         Mi Historia
       </h1>
-      <p class="text-xl text-gray-300">
+      <p class="text-xl text-gray-300" data-i18n="bioHeroSubtitle">
         Artista, compositora y soñadora
       </p>
     </div>
@@ -22,10 +22,10 @@ import SectionTitle from "../components/SectionTitle.astro";
       <!-- Introducción -->
       <div class="grid md:grid-cols-3 gap-8 items-center">
         <div class="md:col-span-2 space-y-6">
-          <p class="text-lg text-gray-300 leading-relaxed">
+          <p class="text-lg text-gray-300 leading-relaxed" data-i18n="bioP1">
             Soy <strong>CALÚ</strong>, cantante y compositora apasionada por la música contemporánea. Mi trabajo explora emociones profundas a través de sonidos únicos que mezclan tradición con innovación.
           </p>
-          <p class="text-lg text-gray-300 leading-relaxed">
+          <p class="text-lg text-gray-300 leading-relaxed" data-i18n="bioP2">
             Desde mis inicios, he dedicado mi vida al arte de la música. Cada canción es un reflejo de mis emociones, mis vivencias y mis sueños. He tenido la oportunidad de presentarme en importantes escenarios y colaborar con otros artistas.
           </p>
         </div>
@@ -40,38 +40,38 @@ import SectionTitle from "../components/SectionTitle.astro";
       <div class="grid md:grid-cols-3 gap-6">
         <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-6 hover:border-pink-500 hover:bg-white/10 transition duration-300">
           <p class="text-4xl font-bold text-pink-400 mb-2 group-hover:scale-110 transition duration-300">50+</p>
-          <p class="text-gray-400">Canciones Compuestas</p>
+          <p class="text-gray-400" data-i18n="statsSongs">Canciones Compuestas</p>
         </div>
         <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-6 hover:border-pink-500 hover:bg-white/10 transition duration-300">
           <p class="text-4xl font-bold text-pink-400 mb-2 group-hover:scale-110 transition duration-300">100+</p>
-          <p class="text-gray-400">Presentaciones en vivo</p>
+          <p class="text-gray-400" data-i18n="statsShows">Presentaciones en vivo</p>
         </div>
         <div class="group bg-white/5 backdrop-blur border border-pink-500/30 rounded-lg p-6 hover:border-pink-500 hover:bg-white/10 transition duration-300">
           <p class="text-4xl font-bold text-pink-400 mb-2 group-hover:scale-110 transition duration-300">5</p>
-          <p class="text-gray-400">Años en la música</p>
+          <p class="text-gray-400" data-i18n="statsYears">Años en la música</p>
         </div>
       </div>
 
       <!-- Trayectoria -->
       <div class="space-y-8">
-        <SectionTitle title="Mi Trayectoria" centered={false} />
+        <SectionTitle title="Mi Trayectoria" centered={false} titleI18n="trajectoryTitle" />
         <div class="space-y-6">
           <div class="flex gap-4 border-l-2 border-pink-500 pl-6 py-4">
             <div>
-              <p class="font-bold text-lg">2020 - Inicio Musical</p>
-              <p class="text-gray-400">Comienzo del proyecto CALÚ con las primeras composiciones originales</p>
+              <p class="font-bold text-lg" data-i18n="traj2020Title">2020 - Inicio Musical</p>
+              <p class="text-gray-400" data-i18n="traj2020Desc">Comienzo del proyecto CALÚ con las primeras composiciones originales</p>
             </div>
           </div>
           <div class="flex gap-4 border-l-2 border-pink-500 pl-6 py-4">
             <div>
-              <p class="font-bold text-lg">2021 - Primeros Conciertos</p>
-              <p class="text-gray-400">Primeras presentaciones en vivo en salas de músiacs reconocidas</p>
+              <p class="font-bold text-lg" data-i18n="traj2021Title">2021 - Primeros Conciertos</p>
+              <p class="text-gray-400" data-i18n="traj2021Desc">Primeras presentaciones en vivo en salas de música reconocidas</p>
             </div>
           </div>
           <div class="flex gap-4 border-l-2 border-pink-500 pl-6 py-4">
             <div>
-              <p class="font-bold text-lg">2023 - Lanzamiento de Álbum</p>
-              <p class="text-gray-400">Lanzamiento del primer álbum oficial con éxito en plataformas digitales</p>
+              <p class="font-bold text-lg" data-i18n="traj2023Title">2023 - Lanzamiento de Álbum</p>
+              <p class="text-gray-400" data-i18n="traj2023Desc">Lanzamiento del primer álbum oficial con éxito en plataformas digitales</p>
             </div>
           </div>
         </div>

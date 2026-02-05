@@ -3,17 +3,19 @@ interface Props {
   title: string;
   subtitle?: string;
   centered?: boolean;
+  titleI18n?: string;
+  subtitleI18n?: string;
 }
 
-const { title, subtitle, centered = true } = Astro.props;
+const { title, subtitle, centered = true, titleI18n, subtitleI18n } = Astro.props;
 ---
 
 <div class={`mb-12 ${centered ? 'text-center' : ''}`}>
-  <h2 class="text-4xl md:text-5xl font-bold font-['Playfair_Display'] mb-4">
+  <h2 class="text-4xl md:text-5xl font-bold font-['Playfair_Display'] mb-4" data-i18n={titleI18n}>
     {title}
   </h2>
   {subtitle && (
-    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+    <p class="text-xl text-gray-400 max-w-2xl mx-auto" data-i18n={subtitleI18n}>
       {subtitle}
     </p>
   )}

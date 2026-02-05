@@ -7,10 +7,10 @@ import SectionTitle from "../components/SectionTitle.astro";
   <!-- Hero Section -->
   <section class="relative min-h-[60vh] flex items-center justify-center text-center px-6 pt-10 bg-linear-to-br from-black via-pink-950/20 to-black">
     <div class="max-w-4xl z-10">
-      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6">
+      <h1 class="text-6xl md:text-7xl font-bold font-['Playfair_Display'] mb-6" data-i18n="contactHeroTitle">
         Contacto
       </h1>
-      <p class="text-xl text-gray-300">
+      <p class="text-xl text-gray-300" data-i18n="contactHeroSubtitle">
         ¿Quieres trabajar conmigo? Estoy aquí para escucharte
       </p>
     </div>
@@ -22,6 +22,8 @@ import SectionTitle from "../components/SectionTitle.astro";
       <SectionTitle 
         title="Ponte en Contacto"
         subtitle="Me encantaría saber de ti"
+        titleI18n="getInTouchTitle"
+        subtitleI18n="getInTouchSubtitle"
       />
 
       <div class="grid md:grid-cols-2 gap-12">
@@ -32,7 +34,7 @@ import SectionTitle from "../components/SectionTitle.astro";
             <div class="flex gap-4">
               <div class="text-2xl text-pink-400 shrink-0">📧</div>
               <div>
-                <p class="font-semibold mb-1">Email</p>
+                <p class="font-semibold mb-1" data-i18n="emailLabel">Email</p>
                 <a href="mailto:contacto@calu.com" class="text-gray-400 hover:text-pink-400 transition">contacto@calu.com</a>
               </div>
             </div>
@@ -40,7 +42,7 @@ import SectionTitle from "../components/SectionTitle.astro";
             <div class="flex gap-4">
               <div class="text-2xl text-pink-400 shrink-0">📱</div>
               <div>
-                <p class="font-semibold mb-1">WhatsApp</p>
+                <p class="font-semibold mb-1" data-i18n="whatsappLabel">WhatsApp</p>
                 <a href="https://wa.me/message" class="text-gray-400 hover:text-pink-400 transition">+56 9 XXXX XXXX</a>
               </div>
             </div>
@@ -48,15 +50,15 @@ import SectionTitle from "../components/SectionTitle.astro";
             <div class="flex gap-4">
               <div class="text-2xl text-pink-400 shrink-0">📍</div>
               <div>
-                <p class="font-semibold mb-1">Ubicación</p>
-                <p class="text-gray-400">Santiago, Chile</p>
+                <p class="font-semibold mb-1" data-i18n="locationLabel">Ubicación</p>
+                <p class="text-gray-400" data-i18n="locationValue">Santiago, Chile</p>
               </div>
             </div>
 
             <div class="flex gap-4">
               <div class="text-2xl text-pink-400 shrink-0">🎵</div>
               <div>
-                <p class="font-semibold mb-1">Redes Sociales</p>
+                <p class="font-semibold mb-1" data-i18n="socialLabel">Redes Sociales</p>
                 <div class="flex gap-3 mt-2">
                   <a href="#" class="text-gray-400 hover:text-pink-400 transition">Instagram</a>
                   <span class="text-gray-600">•</span>
@@ -69,7 +71,7 @@ import SectionTitle from "../components/SectionTitle.astro";
           </div>
 
           <div class="p-6 bg-white/5 backdrop-blur rounded-lg border border-pink-500/30">
-            <p class="text-sm text-gray-400">
+            <p class="text-sm text-gray-400" data-i18n="responseTime">
               <strong>Tiempo de respuesta:</strong> Respondo todos los mensajes en el menor tiempo posible, generalmente en 24-48 horas.
             </p>
           </div>
@@ -77,7 +79,7 @@ import SectionTitle from "../components/SectionTitle.astro";
 
         <!-- Formulario de contacto -->
         <div>
-          <h2 class="text-2xl font-bold font-['Playfair_Display'] mb-6">Envíame un Mensaje</h2>
+          <h2 class="text-2xl font-bold font-['Playfair_Display'] mb-6" data-i18n="sendMessageTitle">Envíame un Mensaje</h2>
           <form class="space-y-6" method="POST">
             <div>
               <input
@@ -85,6 +87,7 @@ import SectionTitle from "../components/SectionTitle.astro";
                 placeholder="Tu nombre"
                 required
                 class="w-full p-4 bg-neutral-900 border border-pink-500/30 rounded-lg focus:outline-none focus:border-pink-500 transition placeholder-gray-600"
+                data-i18n="formName"
               />
             </div>
 
@@ -94,6 +97,7 @@ import SectionTitle from "../components/SectionTitle.astro";
                 placeholder="Tu correo electrónico"
                 required
                 class="w-full p-4 bg-neutral-900 border border-pink-500/30 rounded-lg focus:outline-none focus:border-pink-500 transition placeholder-gray-600"
+                data-i18n="formEmail"
               />
             </div>
 
@@ -103,6 +107,7 @@ import SectionTitle from "../components/SectionTitle.astro";
                 placeholder="Asunto"
                 required
                 class="w-full p-4 bg-neutral-900 border border-pink-500/30 rounded-lg focus:outline-none focus:border-pink-500 transition placeholder-gray-600"
+                data-i18n="formSubject"
               />
             </div>
 
@@ -112,17 +117,19 @@ import SectionTitle from "../components/SectionTitle.astro";
                 rows="5"
                 required
                 class="w-full p-4 bg-neutral-900 border border-pink-500/30 rounded-lg focus:outline-none focus:border-pink-500 transition placeholder-gray-600 resize-none"
+                data-i18n="formMessage"
               ></textarea>
             </div>
 
             <button
               type="submit"
               class="w-full bg-pink-500 hover:bg-pink-600 transition px-6 py-4 rounded-lg font-semibold uppercase tracking-wider"
+              data-i18n="formSubmit"
             >
               Enviar Mensaje
             </button>
 
-            <p class="text-sm text-gray-500 text-center">
+            <p class="text-sm text-gray-500 text-center" data-i18n="formRequired">
               Los campos marcados con * son obligatorios
             </p>
           </form>

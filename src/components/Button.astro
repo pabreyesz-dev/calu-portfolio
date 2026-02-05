@@ -6,7 +6,7 @@ interface Props {
   target?: string;
 }
 
-const { href = '#', variant = 'primary', class: className = '', target } = Astro.props;
+const { href = '#', variant = 'primary', class: className = '', target, ...rest } = Astro.props;
 const baseStyles = 'px-4 py-2 rounded-lg transition duration-300 font-medium uppercase tracking-wider text-xs md:text-sm';
 const variantStyles = {
   primary: 'text-white',
@@ -18,6 +18,7 @@ const variantStyles = {
   href={href} 
   class={`${baseStyles} ${variantStyles[variant]} ${className} ${variant === 'primary' ? 'button-primary' : ''}`}
   {target ? { target, rel: 'noopener noreferrer' } : {}}
+  {...rest}
 >
   <slot />
 </a>
